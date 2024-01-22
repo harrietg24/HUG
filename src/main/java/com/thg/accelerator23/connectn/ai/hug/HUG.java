@@ -4,7 +4,6 @@ import com.thehutgroup.accelerator.connectn.player.Board;
 import com.thehutgroup.accelerator.connectn.player.Counter;
 import com.thehutgroup.accelerator.connectn.player.Player;
 
-
 public class HUG extends Player {
   public HUG(Counter counter) {
     //TODO: fill in your name here
@@ -13,8 +12,10 @@ public class HUG extends Player {
 
   @Override
   public int makeMove(Board board) {
-    //TODO: some crazy analysis
-    //TODO: make sure said analysis uses less than 2G of heap and returns within 10 seconds on whichever machine is running it
-    return 4;
+    int minimum = 1;
+    int maximum = 10;
+
+    int random = (int)Math.floor(Math.random()* (maximum - minimum+1) +minimum);
+    return random;
   }
 }
