@@ -12,8 +12,11 @@ public class HUG extends Player {
 
   @Override
   public int makeMove(Board board) {
+    int board_width = 10;
+    int board_height = 8;
+
     int minimum = 1;
-    int maximum = 10;
+    int maximum = board_width;
 
     int random = (int)Math.floor(Math.random()* (maximum - minimum+1) +minimum);
     return random;
