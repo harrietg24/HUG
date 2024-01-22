@@ -1,10 +1,11 @@
-package com.thg.accelerator23.connectn.ai.hug;
+package com.thg.accelerator23.connectn.ai.hug.analysis;
 
-import com.thehutgroup.accelerator.connectn.model.Line;
+//import com.thehutgroup.accelerator.connectn.model.Line;
 import com.thehutgroup.accelerator.connectn.player.Board;
 import com.thehutgroup.accelerator.connectn.player.Counter;
 import com.thehutgroup.accelerator.connectn.player.GameConfig;
 import com.thehutgroup.accelerator.connectn.player.Position;
+import com.thg.accelerator23.connectn.ai.hug.model.Line;
 
 import java.util.ArrayList;
 import java.util.HashMap;
