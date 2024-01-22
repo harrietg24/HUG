@@ -1,4 +1,4 @@
-package com.thg.accelerator23.connectn.ai.HUG;
+package com.thg.accelerator23.connectn.ai.hug;
 
 import com.thehutgroup.accelerator.connectn.player.Board;
 import com.thehutgroup.accelerator.connectn.player.Counter;
