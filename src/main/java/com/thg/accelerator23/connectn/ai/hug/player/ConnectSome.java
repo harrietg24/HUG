@@ -20,7 +20,7 @@ public class ConnectSome extends Player {
                         board.getCounterAtPosition(new Position(i, j + 1))
                         && board.getCounterAtPosition(new Position(i, j + 1)) ==
                         board.getCounterAtPosition(new Position(i, j + 2))
-                        && board.hasCounterAtPosition(new Position(i, j))) {
+                        && board.hasCounterAtPosition(new Position(i, j)) && !board.hasCounterAtPosition(new Position(i, j + 3))) {
                     int c = i;
                     return c;
                 }
@@ -28,11 +28,11 @@ public class ConnectSome extends Player {
         }
         return 100;
     }
-
-    //public int blockThreeOnBottomRow(Board board) {}
-
     public int makeMove(Board board) {
-        if (blockThreeVertical(board) < 8) {
+        ArrayList possiblePositions = new ArrayList<>();
+        int randomMove = (int) (possiblePositions.size() * Math.random());
+        if (blockThreeVertical(board) < 10 && !board.hasCounterAtPosition(new Position(blockThreeVertical(board), 7))) {
+            System.out.println("First " + blockThreeVertical(board));
             return blockThreeVertical(board);
         } else
         if (!board.hasCounterAtPosition(new Position(4, 0)) && !board.hasCounterAtPosition(new Position(4, 7))) {
@@ -42,13 +42,15 @@ public class ConnectSome extends Player {
             System.out.println(board.getCounterAtPosition(new Position(5,0)));
             return 5;
         } else {
-            ArrayList possiblePositions = new ArrayList<>();
             for (int i = 0; i < boardWidth; i++) {
-                if (!board.hasCounterAtPosition(new Position(i, boardHeight))) {
+                if (!board.hasCounterAtPosition(new Position(i, boardHeight-1))) {
                     possiblePositions.add(i);
                 }
             }
-            return (int) (possiblePositions.size() * Math.random());
+            while (board.hasCounterAtPosition(new Position(randomMove, boardHeight-1))) {
+                randomMove = (int) (possiblePositions.size() * Math.random());
+            }
+            return randomMove;
         }
     }
 }
