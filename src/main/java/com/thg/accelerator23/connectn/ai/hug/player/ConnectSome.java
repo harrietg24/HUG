@@ -35,10 +35,10 @@ public class ConnectSome extends Player {
         if (blockThreeVertical(board) < 8) {
             return blockThreeVertical(board);
         } else
-        if (!board.hasCounterAtPosition(new Position(4, 0))) {
+        if (!board.hasCounterAtPosition(new Position(4, 0)) && !board.hasCounterAtPosition(new Position(4, 7))) {
             System.out.println(board.getCounterAtPosition(new Position(4,0)));
             return 4;
-        } else if (!board.hasCounterAtPosition(new Position(5, 0))) {
+        } else if (!board.hasCounterAtPosition(new Position(5, 0)) && !board.hasCounterAtPosition(new Position(5, 7))) {
             System.out.println(board.getCounterAtPosition(new Position(5,0)));
             return 5;
         } else {
