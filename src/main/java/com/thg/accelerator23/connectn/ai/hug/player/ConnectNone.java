@@ -2,13 +2,13 @@ package com.thehutgroup.accelerator.connectn.player;
 
 import java.util.ArrayList;
 
-public class Hug extends Player {
+public class ConnectNone extends Player {
 
   static final int boardWidth = 10;
   static final int boardHeight = 8;
 
-  public Hug(Counter counter) {
-    super(counter, Hug.class.getName());
+  public ConnectNone(Counter counter) {
+    super(counter, ConnectNone.class.getName());
   }
 
   public int makeMove(Board board) {
