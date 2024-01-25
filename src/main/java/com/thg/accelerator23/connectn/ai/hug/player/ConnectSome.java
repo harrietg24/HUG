@@ -1,10 +1,5 @@
 package com.thehutgroup.accelerator.connectn.player;
 
-import com.thehutgroup.accelerator.connectn.player.Board;
-import com.thehutgroup.accelerator.connectn.player.Counter;
-import com.thehutgroup.accelerator.connectn.player.Player;
-import com.thehutgroup.accelerator.connectn.player.Position;
-
 import java.util.ArrayList;
 
 public class ConnectSome extends Player {
@@ -16,7 +11,7 @@ public class ConnectSome extends Player {
         super(counter, ConnectSome.class.getName());
     }
 
-    public int blockThree(Board board) {
+    public int blockThreeVertical(Board board) {
         // columns
         for (int i = 0; i < 10; i++) {
             //rows
@@ -34,9 +29,18 @@ public class ConnectSome extends Player {
         return 100;
     }
 
+    //public int blockThreeOnBottomRow(Board board) {}
+
     public int makeMove(Board board) {
-        if (blockThree(board) < 8) {
-            return blockThree(board);
+        if (blockThreeVertical(board) < 8) {
+            return blockThreeVertical(board);
+        } else
+        if (!board.hasCounterAtPosition(new Position(4, 0))) {
+            System.out.println(board.getCounterAtPosition(new Position(4,0)));
+            return 4;
+        } else if (!board.hasCounterAtPosition(new Position(5, 0))) {
+            System.out.println(board.getCounterAtPosition(new Position(5,0)));
+            return 5;
         } else {
             ArrayList possiblePositions = new ArrayList<>();
             for (int i = 0; i < boardWidth; i++) {
@@ -48,4 +52,3 @@ public class ConnectSome extends Player {
         }
     }
 }
-
